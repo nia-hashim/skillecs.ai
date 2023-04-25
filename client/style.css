@@ -47,7 +47,6 @@ h1 {
 span {
   background: linear-gradient(to right, #4d1ba3  ,#9258f7 );
   -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
 }
 
 #damn {
