@@ -68,7 +68,7 @@ hr {
   margin-right: auto;
   margin-left: auto;
   margin-top: 30px;
-  margin-bottom: 0px; 
+  margin-bottom: 15px; 
 }
 
 /* hides scrollbar */
@@ -86,7 +86,7 @@ hr {
 }
 
 .ai {
-  background: #160000;
+  background: #750e0e;
   height: auto;
 }
 
