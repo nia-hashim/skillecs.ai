@@ -109,7 +109,6 @@ const handleSubmit = async (e) => {
         alert(err)
     }
 
-    <Analytics />
 }
 
 form.addEventListener('submit', handleSubmit)
