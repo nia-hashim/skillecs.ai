@@ -1,6 +1,5 @@
 import bot from './assets/bot.svg'
 import user from './assets/user.svg'
-import Analytics from '@vercel/analytics'
 
 const form = document.querySelector('form')
 const chatContainer = document.querySelector('#chat_container')
@@ -107,7 +106,6 @@ const handleSubmit = async (e) => {
         messageDiv.innerHTML = "Something went wrong"
         alert(err)
     }
-    <Analytics />
 }
 form.addEventListener('submit', handleSubmit)
 form.addEventListener('keyup', (e) => {
