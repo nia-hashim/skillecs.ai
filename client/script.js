@@ -121,11 +121,13 @@ form.addEventListener('keyup', (e) => {
 })
 function regenerate() {
     form.reset()
-    if (lastInput) {  
+    if (lastInput === null || lastInput === " ") {  
+        alert("type a topic.")}
+        else {
         inputBox.value = lastInput
-        form.dispatchEvent(new Event('submit')
-        )}
-        else {alert ("type in a topic!")}
+        form.dispatchEvent(new Event('submit')) 
+        }
 } 
 
 regenButtonEl.addEventListener('click', regenerate)
+
