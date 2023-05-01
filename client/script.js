@@ -3,8 +3,10 @@ import user from './assets/user.svg'
 
 const form = document.querySelector('form')
 const chatContainer = document.querySelector('#chat_container')
+const regenButtonEl = document.getElementById("regen")
+const inputBox = document.getElementById("input-box")
 
-let loadInterval
+let loadInterval;
 
 function loader(element) {
     element.textContent = ''
@@ -62,6 +64,8 @@ function chatStripe(isAi, value, uniqueId) {
     )
 }
 
+let lastInput = " ";
+
 const handleSubmit = async (e) => {
     e.preventDefault()
 
@@ -72,6 +76,8 @@ const handleSubmit = async (e) => {
     chatContainer.innerHTML += chatStripe(false, data.get('prompt'))
 
     form.reset()
+
+    lastInput = data.get('prompt');
 
     const uniqueId = generateUniqueId()
     chatContainer.innerHTML += chatStripe(true, " ", uniqueId)
@@ -113,3 +119,10 @@ form.addEventListener('keyup', (e) => {
         handleSubmit(e)
     }
 })
+function regenerate() {
+    form.reset()
+    inputBox.value = lastInput
+    form.dispatchEvent(new Event('submit'))
+}
+
+regenButtonEl.addEventListener('click', regenerate)
